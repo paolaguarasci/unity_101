@@ -5,15 +5,14 @@ using UnityEngine;
 public class Spin : MonoBehaviour
 {
     public float speed = 3.0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, speed, 0);
+        // Cosi ruota attorno al proprio asse Y
+        //transform.Rotate(0, speed, 0);
+
+        // Il 4' argomento e' lo spazio delle coordinate, il riferimento
+        // Cosi ruota rispetto all'asse Y del mondo, del piano 
+        transform.Rotate(0, speed, 0, Space.World);
     }
 }
