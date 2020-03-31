@@ -1,9 +1,7 @@
 ﻿<Properties StartupConfiguration="{F132B379-56BC-84E3-F620-208837990B83}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RespondToHit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RayShooter.cs">
     <Files>
-      <File FileName="Assets/Scripts/FPSInput.cs" Line="34" Column="29" />
-      <File FileName="Assets/Scripts/RayShooter.cs" Line="25" Column="75" />
-      <File FileName="Assets/Scripts/RespondToHit.cs" Line="16" Column="11" />
+      <File FileName="Assets/Scripts/RayShooter.cs" Line="31" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +9,7 @@
           <Node name="progettoSvoltoALezione" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="RespondToHit.cs" selected="True" />
+                <Node name="RayShooter.cs" selected="True" />
               </Node>
             </Node>
           </Node>

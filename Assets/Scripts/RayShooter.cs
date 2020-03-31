@@ -9,6 +9,9 @@ public class RayShooter : MonoBehaviour
     void Start()
     {
         _camera = GetComponent<Camera>();
+        // blocco il cursore
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -26,10 +29,25 @@ public class RayShooter : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 // avvia una cooroutine per rispondere al colpo
+                // Attenzione non avvia un nuovo Thread
+                // non si tratta di calcolo parallelo ma concorrente
+                // in unity fondamentalmente fa tutto il thread principale
+                // le cooroutine simulano comportamenti asincroni
                 StartCoroutine(SphereIndicator(hit.point));
+
+                // un metodo messo qui con il metodo in pausa (yeald)
+                // sarebbe eseguito
             }
         }
         
+    }
+
+    private void OnGUI()
+    {
+        int size = 12;
+        float posX = _camera.pixelWidth / 2 - size / 4;
+        float posY = _camera.pixelHeight / 2 - size / 2;
+        GUI.Label(new Rect(posX, posY, size, size), "*");
     }
 
     // Cooroutine che usa la funzione IEnumerator
