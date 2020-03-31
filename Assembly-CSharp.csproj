@@ -66,6 +66,8 @@
     <Compile Include="Assets\Scripts\FPSInput.cs" />
     <Compile Include="Assets\Scripts\KeyboardsMove.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\RayShooter.cs" />
+    <Compile Include="Assets\Scripts\RespondToHit.cs" />
     <Compile Include="Assets\Scripts\Spin.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/paola/unity/progettoSvoltoALezione/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
