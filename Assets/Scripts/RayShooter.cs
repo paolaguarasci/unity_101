@@ -28,6 +28,17 @@ public class RayShooter : MonoBehaviour
             // out significa che e' un passaggio per riferimento
             if (Physics.Raycast(ray, out hit))
             {
+
+                GameObject hitObject = hit.transform.gameObject;
+                ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
+
+                if (target != null)
+                {
+                    target.ReactToHit();
+                } else
+                {
+
+
                 // avvia una cooroutine per rispondere al colpo
                 // Attenzione non avvia un nuovo Thread
                 // non si tratta di calcolo parallelo ma concorrente
@@ -37,6 +48,7 @@ public class RayShooter : MonoBehaviour
 
                 // un metodo messo qui con il metodo in pausa (yeald)
                 // sarebbe eseguito
+                }
             }
         }
         
