@@ -14,7 +14,7 @@ public class RayShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))    
         {
 
             Vector3 point = new Vector3(_camera.pixelWidth / 2, _camera.pixelHeight / 2, 0);
@@ -23,14 +23,26 @@ public class RayShooter : MonoBehaviour
 
             // ritorna un buleano... colpito?
             // out significa che e' un passaggio per riferimento
-            if (Physics.Raycast(ray, out hit)) {
-                RespondToHit enemy = hit.transform.GetComponent<RespondToHit>();
-                if (enemy != null)
-                {
-                    Debug.Log("Hit nemico!");
-                }
+            if (Physics.Raycast(ray, out hit))
+            {
+                // avvia una cooroutine per rispondere al colpo
+                StartCoroutine(SphereIndicator(hit.point));
             }
         }
         
     }
+
+    // Cooroutine che usa la funzione IEnumerator
+    private IEnumerator SphereIndicator(Vector3 pos)
+    {
+        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        sphere.transform.position = pos;
+
+
+        // la keyword yeald dice alla cooroutine dove mettersi in pausa
+        yield return new WaitForSeconds(1);
+
+        // distrugge la sfera
+        Destroy(sphere);
+    } 
 }
