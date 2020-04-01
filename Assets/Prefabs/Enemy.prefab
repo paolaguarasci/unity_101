@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7103745442335584661}
   - component: {fileID: 7103745442335584662}
   - component: {fileID: 7103745442335584663}
+  - component: {fileID: 6403936087693653321}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7103745442335584664}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1188c1328464c4998b72bfad7c19997b, type: 3}
   m_Name: 
@@ -118,3 +119,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010897dbea48d40d999404f8063f50a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6403936087693653321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7103745442335584664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8bdf5d32a5e4aae8d50a40ee5db4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  obstacleRange: 5
