@@ -36,20 +36,28 @@ public class WonderingAI : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(0, 0, speed * Time.deltaTime);
-
-        // il raggio parte dalla posizione dell'oggetto e punta in avanti (relativo all'oggetto)
-        Ray ray = new Ray(transform.position, transform.forward);
-
-        RaycastHit hit;
-
-        if (Physics.SphereCast(ray, 0.75f, out hit))
+        if (_alive)
         {
-            if (hit.distance < obstacleRange)
+            transform.Translate(0, 0, speed * Time.deltaTime);
+
+            // il raggio parte dalla posizione dell'oggetto e punta in avanti (relativo all'oggetto)
+            Ray ray = new Ray(transform.position, transform.forward);
+
+            RaycastHit hit;
+
+            if (Physics.SphereCast(ray, 0.75f, out hit))
             {
-                float angle = Random.Range(-110, 110);
-                transform.Rotate(0, angle, 0);
+                if (hit.distance < obstacleRange)
+                {
+                    float angle = Random.Range(-110, 110);
+                    transform.Rotate(0, angle, 0);
+                }
             }
         }
+    }
+
+    public void setAlive(bool alive)
+    {
+        _alive = alive;
     }
 }

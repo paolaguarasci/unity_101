@@ -31,10 +31,14 @@ public class RayShooter : MonoBehaviour
 
                 GameObject hitObject = hit.transform.gameObject;
                 ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
-
-                if (target != null)
+                WonderingAI ai = hitObject.GetComponent<WonderingAI>();
+               
+                
+                if (target != null && ai != null)
                 {
+                    ai.setAlive(false);
                     target.ReactToHit();
+                    
                 } else
                 {
 
