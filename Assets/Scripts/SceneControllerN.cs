@@ -5,22 +5,26 @@ using UnityEngine;
 public class SceneControllerN : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;
-    private GameObject _enemy;
+    [SerializeField] private int enemiesCount = 100;
+    private GameObject[] enemies;
 
     void Start()
     {
-
+        enemies = new GameObject[enemiesCount];
     }
 
     void Update()
     {
-
-        if (_enemy == null)
+        for(int i = 0; i < enemies.Length; i++)
         {
-            _enemy = Instantiate(enemyPrefab) as GameObject;
-            _enemy.transform.position = new Vector3(0, 2, 0);
-            float angle = Random.Range(0, 360);
-            _enemy.transform.Rotate(0, angle, 0);
+            if (enemies[i] == null)
+            {
+                enemies[i] = Instantiate(enemyPrefab) as GameObject;
+                enemies[i].transform.position = new Vector3(Random.Range(1f, 5f), 2f, Random.Range(1f, 5f)); ;
+                float angle = Random.Range(0, 360f);
+                enemies[i].transform.Rotate(0, angle, 0);
+            }
         }
+      
     }
 }
